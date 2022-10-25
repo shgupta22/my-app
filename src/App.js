@@ -1,25 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
 
+let name = "Testing"
 function App() {
   return (
     <>
-      <h1>This is my website</h1>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learning React being a Full Stack Developer
-          </a>
-        </header>
+      <nav>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </nav>
+
+      <div>
+        <h1>Hello {name}</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti commodi, cupiditate a modi corporis veritatis voluptatem quia laudantium id ipsa placeat quaerat est porro consectetur, ut reprehenderit maxime temporibus quasi.
+        </p>
       </div>
     </>
   );
