@@ -5,11 +5,13 @@ export default function TextForm(props) {
     // console.log('upper case clicked' + text);
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to uppercase!", "success");
   }
 
   const handleLcClick = ()=> { 
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to lowercase!", "success");
   }
 
   const handleInverseClick = ()=> {
@@ -22,6 +24,7 @@ export default function TextForm(props) {
         }
     }
     setText(newText);
+    props.showAlert("Converted to inverse case!", "success");
   }
 
   const handleAltClick = ()=> {
@@ -30,6 +33,7 @@ export default function TextForm(props) {
       newText[i] = newText[i].toUpperCase();
     }
     setText(newText.join(""));
+    props.showAlert("Converted to alternate case!", "success");
   }
 
   const handleCapClick = ()=> {
@@ -38,21 +42,25 @@ export default function TextForm(props) {
       newText[i] = newText[i].charAt(0).toUpperCase() + newText[i].slice(1);
     }
     setText(newText.join(" "));
+    props.showAlert("Converted to capitalized case!", "success");
   }
 
   const handleCopyClick = ()=> {
     var text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Copied to clipboard!", "success");
   }
 
   const handleExtraSpaceClick = ()=> {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("Removed extra spaces!", "success");
   }
 
   const handleClearClick = ()=> {
     setText('');
+    props.showAlert("Text cleared!", "success");
   }
 
   const handleOnChange = (event)=> {
@@ -70,7 +78,7 @@ export default function TextForm(props) {
         </div>
         <button className="btn btn-primary mx-1" onClick={handleUpClick}>Uppercase</button>
         <button className="btn btn-primary mx-1" onClick={handleLcClick}>Lowercase</button>
-        <button className="btn btn-primary mx-1" onClick={handleCapClick}>Capatalized Case</button>
+        <button className="btn btn-primary mx-1" onClick={handleCapClick}>Capitalized Case</button>
         <button className="btn btn-primary mx-1" onClick={handleInverseClick}>Inverse Case</button>
         <button className="btn btn-primary mx-1" onClick={handleAltClick}>aLtErNaTe Case</button>
         <button className="btn btn-primary mx-1" onClick={handleExtraSpaceClick}>Remove Extra Space</button>
